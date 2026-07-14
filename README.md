@@ -42,6 +42,22 @@ videos, error dialogs, remote-desktop windows.
 Finds the most recent `.png` in `~/Pictures/Screenshots`, OCRs the whole
 image, and copies the text. Handy right after taking a screenshot with `PrtSc`.
 
+### `ocr-select-latest.sh` (bonus)
+
+Opens the newest screenshot in
+[copy-text-from-image](https://github.com/itspanchal/copy-text-from-image)
+(install that companion app first), so instead of copying *all* the text you
+can drag-select exactly the lines you want. If you prefer this behavior on
+`Ctrl+Shift+H`, point the shortcut's command at this script:
+
+```bash
+install -m 755 ocr-select-latest.sh ~/.local/bin/ocr-select-latest.sh
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "$HOME/.local/bin/ocr-select-latest.sh"
+```
+
+(Adjust `custom0` to whichever slot holds your `Ctrl+Shift+H` binding — check
+**Settings → Keyboard → Custom Shortcuts**.)
+
 ## Set up shortcuts manually (optional)
 
 If you'd rather not run the installer, add them in
